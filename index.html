@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styleindex.css">
-    <link href="bootstrap/css/bootstrap-grid.min.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
-    <h1>hello world</h1>
-
-
-
-    <script src="scriptindex.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+        <div class="text-center mb-4">
+            <h1>Todo List</h1>
+        </div>
+        <form class="form-group">
+            <div class="form-group">
+                <label for="task-add" class="form-label">Tambahkan Tugas</label>
+                <div class="input-box">
+                    <input type="text" placeholder="Tambahkan" class="form-control" autocomplete="off" name="task_add"
+                        id="task-add">
+                    <button id="btn-add" type="submit" class="btn">
+                        <img src="img/add.png" alt="Add">
+                    </button>
+                </div>
+            </div>
+        </form>
+        <ul id="todo-list" class="list-group mt-2">
+        </ul>
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah yakin menghapus tugas?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger" id="confirm-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Tugas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="edit-task" class="form-label">Tugas Baru</label>
+                        <input type="text" class="form-control" id="edit-task" placeholder="Edit your task">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary" id="save-edited-task">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scriptindex.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
